@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
   </div>
 </template>
 
@@ -28,5 +25,9 @@
       color: #42b983;
     }
   }
+}
+.container{
+  padding-bottom: 1em;
+  margin: 0 13em !important;
 }
 </style>
