@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest build",
     "lint": "vue-cli-service lint",
     "prestart": "npm run build",
-    "start": "serve -l tcp://0.0.0.0:8080 ./dist"
+    "start": "serve -l tcp://0.0.0.0:8080 ./build"
   },
   "dependencies": {
     "axios": "^0.19.2",
