@@ -25,8 +25,8 @@ export default {
     return {
       fakeData: 'convert',
       endpoint: 'http://predictive-journey-journey-men.apps.threefold.x1l7.p1.openshiftapps.com/score/emailaddress/',
-      email: 'email@address.com',
-      userScore: 0
+      email: this.$route.query.email,
+      userScore: 0,
     }
   },
   mounted () {
