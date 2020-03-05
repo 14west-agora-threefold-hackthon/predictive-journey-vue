@@ -4,7 +4,7 @@
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <img
-                    src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                    src="@/assets/LogoTop.png"
                     alt="Lightweight UI components for Vue.js based on Bulma"
                 >
             </b-navbar-item>
@@ -14,11 +14,14 @@
                 Home
             </b-navbar-item>
             <b-navbar-item href="#">
-                Documentation
+                Market Updates
             </b-navbar-item>
-            <b-navbar-dropdown label="Info">
+            <b-navbar-item href="#">
+                Latest Content
+            </b-navbar-item>
+            <b-navbar-dropdown label="Members Area">
                 <b-navbar-item href="#">
-                    About
+                    Subscriptions
                 </b-navbar-item>
                 <b-navbar-item href="#">
                     Contact
@@ -29,7 +32,12 @@
         <template slot="end">
             <b-navbar-item tag="div">
                 <div class="buttons">
-                    Logged in as (Mark Power)
+                            <a class="button is-primary">
+                        <strong>Premium Content</strong>
+                    </a>
+                    <a class="button is-light">
+                        Sign Out
+                    </a>
                 </div>
             </b-navbar-item>
         </template>

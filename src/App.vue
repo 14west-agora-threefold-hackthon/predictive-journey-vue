@@ -30,4 +30,17 @@
   padding-bottom: 1em;
   margin: 0 13em !important;
 }
+h1{
+  font-size: 4em !important;
+  text-align: left;
+}
+h2{
+  font-size: 3em !important;
+  text-align: left;
+}
+p{
+  text-align: left !important;
+  font-weight: 500;
+  font-size: 1.2em;
+}
 </style>
