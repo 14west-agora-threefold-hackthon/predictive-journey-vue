@@ -32,7 +32,7 @@ export default {
   mounted () {
     axios
       .get(this.endpoint + this.email)
-      .then(response => (this.userScore = response))
+      .then(response => (this.userScore = response.data))
       .catch(error => {
         console.error(error)
         this.userScore = 0
