@@ -35,15 +35,23 @@ export default {
     data () {
         return {
             endpoint: 'http://predictive-journey-journey-men.apps.threefold.x1l7.p1.openshiftapps.com/customer/update',
-            email: this.$route.query.email,
-            result: ''
+            result: '',
+            payload: {
+                "emailAddress" : this.$route.query.email,
+                "bsLastPurchaseSince" : "1",
+                "bsLifetimeRevenue" : "2000",
+                "bsLifetimeVisits" : "50",
+                "bsPredictiveEngagementPercentile" : "100",
+                "mwSubsCount" : "2",
+                "mwListsCount" : "5"
+            }
         }
     },
     methods: {
         updateUser: function (event){
             event.preventDefault()
             axios
-            .post(this.endpoint + this.email, {})
+            .post(this.endpoint, this.payload)
             .then( result => {
                 this.result = result
                 window.location = '/purchase';

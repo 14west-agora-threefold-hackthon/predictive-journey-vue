@@ -8,14 +8,10 @@
                 <h3>The new radical investors book 💰💰💰</h3>
                 <p>180 pages of <strong>advice, ideas</strong> and <strong>practical tips</strong> to become an investing powerhouse so that you can <strong>make more money!</strong></p>
                 <div class="action-section">
-                    <button class="order-high">
-                        <span class="offer">E-book & Hardcopy</span>
-                        <span class="call-to-action">Order Now</span>
+                    <button v-on:click="updateUser" class="order-high">
+                        <span class="offer">For your copy of the new radical investor book</span>
+                        <span class="call-to-action">Signup now</span>
                     </button>
-                    <button class="order-low">
-                        <span class="call-to-action">I Only Want The Book</span>
-                    </button>
-                    <a class="link-bottom" href="#">Get your free chapter today.</a>
                 </div>
 
             </div>
@@ -24,8 +20,32 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    name: 'SignupForm'
+    name: 'SignupForm',
+    data () {
+        return {
+            endpoint: 'http://predictive-journey-journey-men.apps.threefold.x1l7.p1.openshiftapps.com/customer/update', 
+            result: '',
+            payload: {
+                "emailAddress" : this.$route.query.email,
+                "mwSubsCount" : "2",
+                "mwListsCount" : "5"
+            }
+        }
+    },
+    methods: {
+        updateUser: function (event){
+            event.preventDefault()
+            axios
+            .post(this.endpoint, this.payload)
+            .then( result => {
+                this.result = result
+                window.location = '/signup';
+            })
+
+        }
+    }
 }
 </script>
 
@@ -54,14 +74,13 @@ h3{
     width: 250px;
 }
 .action-section{
-    margin: 0.5em 0;
+    margin: 2.2em 0;
     .order-high{
         background-color: #373737;
         border-radius: 4px;
         width: 170px;
         height: 110px;
         color: white;
-        float:left;
   .offer{
       display:block;
   }
@@ -90,6 +109,6 @@ h3{
     clear: both;
     display: block;
     text-align: left;
-    padding: 1em 0;
+    padding: 2.2em 0;
 }
 </style>
