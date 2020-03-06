@@ -34,7 +34,7 @@ export default {
     name: 'PaymentDetails',
     data () {
         return {
-            endpoint: 'http://predictive-journey-journey-men.apps.threefold.x1l7.p1.openshiftapps.com/score/emailaddress/',
+            endpoint: 'http://predictive-journey-journey-men.apps.threefold.x1l7.p1.openshiftapps.com/customer/update',
             email: this.$route.query.email,
             result: ''
         }
@@ -46,10 +46,6 @@ export default {
             .post(this.endpoint + this.email, {})
             .then( result => {
                 this.result = result
-                window.location = '/purchase';
-            })
-            .catch(error => {
-                console.error(error)
                 window.location = '/purchase';
             })
 

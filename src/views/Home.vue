@@ -27,6 +27,7 @@ export default {
       endpoint: 'http://predictive-journey-journey-men.apps.threefold.x1l7.p1.openshiftapps.com/score/emailaddress/',
       email: this.$route.query.email,
       userScore: 0,
+      error: ''
     }
   },
   mounted () {
@@ -34,7 +35,7 @@ export default {
       .get(this.endpoint + this.email)
       .then(response => (this.userScore = response.data))
       .catch(error => {
-        console.error(error)
+        this.error = error
         this.userScore = 0
         })
   }
