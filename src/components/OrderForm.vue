@@ -2,7 +2,7 @@
     <section class="form-container">
         <h1>Purchase the “Begin Investing” Package</h1>
         <p>Purchasing this you will get <strong>advice, ideas</strong> and <strong>practical tips</strong> to become an investing powerhouse so that you can <strong>make more money!</strong></p>
-  <b-steps :has-navigation="hasNavigation" aria-current-label="1" aria-page-label="2" type="is-success" v-on:change="onChange">
+  <b-steps v-model="activeStep" :has-navigation="hasNavigation" aria-current-label="2" aria-page-label="2" type="is-success" v-on:change="onChange">
             <b-step-item label="Your Details" ></b-step-item>
             <customer-info v-if="step === 0" />
             <b-step-item label="Shopping Details" ></b-step-item>
@@ -14,19 +14,15 @@
                 slot="navigation"
                 slot-scope="{previous, next}">
                 <b-button
-                    outlined
-                    type="is-danger"
-                    icon-pack="fas"
-                    icon-left="backward"
+                    type="custom-button"
+                    icon-left="arrow-left"
                     :disabled="previous.disabled"
                     @click.prevent="previous.action">
                     Previous
                 </b-button>
                 <b-button
-                    outlined
-                    type="is-success"
-                    icon-pack="fas"
-                    icon-right="forward"
+                    type="custom-button"
+                    icon-right="arrow-right"
                     :disabled="next.disabled"
                     @click.prevent="next.action">
                     Next
@@ -51,15 +47,13 @@ import PaymentDetails from '@/components/PaymentDetails.vue'
         },
         data() {
             return {
-                step: 0,
+                step: 1,
                 showButtons: false,
-                 activeStep: 0,
+                activeStep: 1,
                 showSocial: false,
                 isAnimated: true,
                 hasNavigation: false,
                 customNavigation: false,
-                prevIcon: 'chevron-left',
-                nextIcon: 'chevron-right',
                 isStepsClickable: false,
                 isProfileSuccess: false
             }

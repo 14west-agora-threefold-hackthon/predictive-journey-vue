@@ -43,4 +43,32 @@ p{
   font-weight: 500;
   font-size: 1.2em;
 }
+.custom-button{
+    background-color: #373737 !important;
+    border-radius: 4px !important;
+    color: white !important;
+    min-height: 3em !important;
+    min-width: 8em !important;
+    margin: 1em !important;
+}
+.is-primary{
+  background-color: #F8C56D !important;
+  color:black !important;
+}
+.is-warning{
+  background-color: #417505 !important;
+  color: white !important;
+}
+.is-info{
+   background-color: #4A90E2 !important;
+   color: white !important;
+}
+.is-danger{
+  background-color: #50E3C2 !important;
+  color: black !important;
+}
+.is-custom{
+  background-color: #373737 !important;
+  color: white !important;
+}
 </style>

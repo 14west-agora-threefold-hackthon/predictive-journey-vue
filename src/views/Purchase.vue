@@ -3,14 +3,10 @@
         <Header />
         <div class="container">
             <div class="content">
-                <h1>Welcome back to the club Mark</h1>
+                <h1>Your Purchase has been complete</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, assumenda illum nemo itaque, eligendi voluptates, cupiditate ab porro dolores amet minus inventore impedit esse exercitationem vel obcaecati. Soluta, sunt. Voluptates!</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit maiores porro et atque voluptatem sit nulla totam distinctio adipisci error tempore facilis sed similique eligendi sapiente quaerat labore, laboriosam quidem.</p>
-                <chat-bot />
-                <welcome-back />
-
                 <faq />
-                
             </div>
         </div>
         <Footer />
@@ -22,16 +18,12 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Faq from '@/components/Faq.vue'
-import WelcomeBack from '@/components/GettingStarted.vue'
-import ChatBot from '@/components/ChatBot.vue'
 export default {
-    name: 'Engage',
+    name: 'Purchase',
     components: {
         Header,
         Footer,
-        Faq,
-        WelcomeBack,
-        ChatBot
+        Faq
     }
 }
 </script>

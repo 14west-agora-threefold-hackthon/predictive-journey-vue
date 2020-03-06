@@ -33,6 +33,10 @@ export default {
     axios
       .get(this.endpoint + this.email)
       .then(response => (this.userScore = response))
+      .catch(error => {
+        console.error(error)
+        this.userScore = 0
+        })
   }
 }
 </script>
